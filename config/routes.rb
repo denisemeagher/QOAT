@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "quotes#index"
+
+
+  # constraints subdomain: 'api' do
+    # scope module: 'api' do
+    namespace :api, defaults: {format: 'json'} do
+      namespace :v1 do
+        resources :quotes
+      end
+    end
+  # end
 end
