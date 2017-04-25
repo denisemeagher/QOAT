@@ -1,0 +1,1 @@
+QUOTES_DATA = YAML::load(File.open("#{Rails.root}/config/quote_data/quotes.yml"))

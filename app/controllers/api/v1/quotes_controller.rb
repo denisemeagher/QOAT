@@ -3,7 +3,7 @@ module Api::V1
 
     def index
       respond_to do |format|
-        format.json {render json: Quote.all}
+        format.json {render json: Quote.all.includes(:author)}
       end
     end
 

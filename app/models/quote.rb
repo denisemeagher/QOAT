@@ -2,6 +2,8 @@ class Quote < ApplicationRecord
 	has_one :author
 
   before_create :build_associations
+  # before_create :build_slug
+
   attr_accessor :author_name
 
 
@@ -15,6 +17,9 @@ class Quote < ApplicationRecord
     remove_all_nil_fields(hash,["author"])
   end
 
+  def build_slug
+    self.slug = self.author_name
+  end
 
 
   private
